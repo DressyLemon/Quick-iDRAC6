@@ -19,10 +19,10 @@ Ensure that you change the iDRAC command line switches
 mkdir Quick-iDRAC6
 cd Quick-iDRAC6
 powershell -c "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/DressyLemon/Quick-iDRAC6/main/run.bat' -OutFile 'run.bat'"
-run.bat -d %cd% -h idrac6.example.com -w 443 -k 5900 -u root
+run.bat -d="%cd%" -h="idrac6.example.com" -w=44 -k=900 -u=root
 ```
 ### Single Command Example
 Ensure that you change the iDRAC command line switches
 ```cmd
-mkdir Quick-iDRAC6 & cd Quick-iDRAC6 & powershell -c "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/DressyLemon/Quick-iDRAC6/main/run.bat' -OutFile 'run.bat'" & run.bat -d %cd% -h idrac6.example.com -w 443 -k 5900 -u root
+mkdir Quick-iDRAC6 & cd Quick-iDRAC6 & powershell -c "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/DressyLemon/Quick-iDRAC6/main/run.bat' -OutFile 'run.bat'" & run.bat -d=%cd% -h="idrac6.example.com" -w=443 -k=5900 -u root
 ```
