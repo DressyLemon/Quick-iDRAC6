@@ -123,11 +123,7 @@ set "psCommand=powershell -Command "$pword = read-host 'Enter Password' -AsSecur
     $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); ^
         [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)""
 for /f "usebackq delims=" %%p in (`%psCommand%`) do set dracpwd=%%p
-"%LocalPath%\jre\bin\java" -cp .\lib\avctKVM.jar -Djava.library.path=.\lib com.avocent.idrac.kvm.Main ip="%drachost%" kmport="%kmport%" vport="%kmport%" user="%dracuser%" passwd="%dracpwd%" apcp=1 version=2 vmprivilege=true "helpurl=https://%drachost%:%uiport%/help/contents.html" >> log.txt >nul
-findstr /m "User login response: 3" log.txt >Nul
-if %errorlevel%==0 (
-echo Incorrect user infomation was entered, please try again.
-)
+"%LocalPath%\jre\bin\java" -cp .\lib\avctKVM.jar -Djava.library.path=.\lib com.avocent.idrac.kvm.Main ip="%drachost%" kmport="%kmport%" vport="%kmport%" user="%dracuser%" passwd="%dracpwd%" apcp=1 version=2 vmprivilege=true "helpurl=https://%drachost%:%uiport%/help/contents.html" >> log.txt
 pause
 exit /b 1
 
